@@ -6,7 +6,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkModule {
-    private const val BASE_URL = "https://www.omdbapi.com"
+    // Retrofit requires baseUrl to end with a '/'
+    private const val BASE_URL = "https://www.omdbapi.com/"
 
     fun createMovieApi(): MovieApi {
         val logging = HttpLoggingInterceptor().apply {
